@@ -1,0 +1,78 @@
+.float-grid::after {
+  display: block;
+  content: "";
+  clear: both; }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #222;
+  font-size: 14px; }
+
+.section {
+  padding: 40px; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+.top-bar {
+  background-color: #222;
+  border-bottom: solid 4px #40B8D6; }
+  .top-bar__languages {
+    float: left; }
+  .top-bar__links {
+    float: right; }
+    .top-bar__links a:link, .top-bar__links a:visited {
+      display: inline-block;
+      margin: 0 10px;
+      color: #40B8D6;
+      font-weight: 600;
+      line-height: 36px;
+      font-size: 13px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      -webkit-transition: color .2s;
+      transition: color .2s; }
+      .top-bar__links a:link:hover, .top-bar__links a:link:active, .top-bar__links a:visited:hover, .top-bar__links a:visited:active {
+        color: #248ca6; }
+    .top-bar__links--padding {
+      padding-left: 30px; }
+
+.cover {
+  position: relative;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(../img/cover-bg.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/cover-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 400px; }
+  .cover__title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Handlee', cursive;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: .09em; }
+    .cover__title span {
+      display: block; }
+    .cover__title--span {
+      font-family: 'Open Sans', sans-serif;
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: .3em; }
+
+/*# sourceMappingURL=main.css.map */
