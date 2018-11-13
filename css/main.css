@@ -1,4 +1,4 @@
-.float-grid::after {
+.grid-60-40::after, .grid-3::after, .top-bar::after {
   display: block;
   content: "";
   clear: both; }
@@ -11,17 +11,90 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
+.title {
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  margin-bottom: 60px; }
+  .title::after {
+    display: block;
+    content: "";
+    margin: 20px auto;
+    height: 4px;
+    width: 120px;
+    border-radius: 50px;
+    background-color: #40B8D6; }
+  .title--sm {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: left; }
+    .title--sm::after {
+      height: 2px;
+      width: 60px;
+      margin: 10px 0; }
+
+.text-gray {
+  color: #777;
+  line-height: 1.6;
+  text-align: justify; }
+  .text-gray span {
+    font-weight: 700;
+    color: #222; }
+  .text-gray:not(:last-child) {
+    margin-bottom: 15px; }
+
+.text-blue {
+  color: #40B8D6; }
+
+.icon {
+  font-size: 16px;
+  width: 15px;
+  text-align: center;
+  color: #40B8D6;
+  margin-right: 10px; }
+
+.grid-60-40 > div {
+  float: left; }
+  .grid-60-40 > div:first-child {
+    width: 60%;
+    margin-right: 40px; }
+  .grid-60-40 > div:last-child {
+    width: calc(40% - 40px); }
+
+.grid-3 > div {
+  float: left;
+  width: calc(100% / 3); }
+
 body {
   font-family: 'Open Sans', sans-serif;
   color: #222;
   font-size: 14px; }
 
 .section {
-  padding: 40px; }
+  padding: 80px 40px; }
+  .section--gray {
+    background-color: #f9f9f9; }
 
 .container {
   max-width: 1200px;
   margin: 0 auto; }
+
+.parallax {
+  height: 220px;
+  width: 100%; }
+  .parallax--cv {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5))), url("../img/parallax-bg3.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.5)), url("../img/parallax-bg3.jpg");
+    background-attachment: fixed;
+    background-size: cover; }
+  .parallax--git {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5))), url("../img/parallax-bg1.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.5)), url("../img/parallax-bg1.jpg");
+    background-attachment: fixed;
+    background-size: cover; }
 
 .header {
   padding-top: 40px; }
@@ -87,7 +160,7 @@ body {
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
-    bottom: -100px; }
+    bottom: -75px; }
 
 .avatar {
   position: relative;
@@ -148,5 +221,9 @@ body {
       .menu__list li:nth-child(3), .menu__list li:nth-child(4) {
         -webkit-transform: translateX(125px);
                 transform: translateX(125px); }
+
+.footer {
+  background-color: #222;
+  height: 220px; }
 
 /*# sourceMappingURL=main.css.map */

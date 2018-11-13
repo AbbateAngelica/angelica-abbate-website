@@ -7,6 +7,12 @@ $color-gray: #777;
 
 // ---------- MIXINS & PLACEHOLDERS
 
+@mixin parallax($img) {
+    background-image: linear-gradient(rgba(0, 0, 0, .5) rgba(0, 0, 0, .5)), url($img);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 %clearfix {
     &::after {
         display: block;
@@ -26,13 +32,90 @@ $color-gray: #777;
 
 
 
-// ---------- HEADINGS
+// ---------- HEADINGS & PARAGRAPH
 
+.title {
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    margin-bottom: 60px;
+
+    &::after {
+        display: block;
+        content: "";
+        margin: 20px auto;
+        height: 4px;
+        width: 120px;
+        border-radius: 50px;
+        background-color: $color-main;
+    }
+
+    &--sm {
+        font-size: 16px;
+        margin-bottom: 20px;
+        font-weight: 600;
+        text-align: left;
+        &::after {
+            height: 2px;
+            width: 60px;
+            margin: 10px 0;
+        }
+    }
+}
+
+.text-gray {
+    color: $color-gray;
+    line-height: 1.6;
+    text-align: justify;
+
+    & span {
+        font-weight: 700;
+        color: $color-dark;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 15px;
+    }
+}
+
+.text-blue {
+    color: $color-main;
+}
+
+.icon {
+    font-size: 16px;
+    width: 15px;
+    text-align: center;
+    color: $color-main;
+    margin-right: 10px;
+}
 
 // ---------- GRIDS
 
-.float-grid {
+.grid-60-40 {
     @extend %clearfix;
+    & > div {
+        float: left;
+
+        &:first-child {
+            width: 60%;
+            margin-right: 40px;
+        }
+        
+        &:last-child {
+            width: calc(40% - 40px);
+        }
+    }
+}
+
+.grid-3 {
+    @extend %clearfix;
+    & > div {
+        float: left;
+        width: calc(100% / 3);
+    }
 }
 
 // ---------- GENERAL
@@ -43,14 +126,29 @@ body {
 }
 
 .section {
-    padding: 40px;
+    padding: 80px 40px;
+    
+    &--gray {
+        background-color: $color-gray-bg;
+    }
 }
 .container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
+.parallax {
+    height: 220px;
+    width: 100%;
 
+    &--cv {
+        @include parallax("../img/parallax-bg3.jpg");
+    }
+
+    &--git {
+        @include parallax("../img/parallax-bg1.jpg");
+    }
+}
 
 // ---------- SECTIONS
 .header {
@@ -58,6 +156,7 @@ body {
 }
 
 .top-bar {
+    @extend %clearfix;
     position: fixed;
     top: 0;
     left: 0;
@@ -131,7 +230,7 @@ body {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: -100px;
+        bottom: -75px;
     }
 }
 
@@ -210,4 +309,14 @@ body {
             }
         }
     }
+}
+
+
+
+
+
+
+.footer {
+    background-color: $color-dark;
+    height: 220px;
 }
