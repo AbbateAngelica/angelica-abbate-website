@@ -3,6 +3,16 @@
   content: "";
   clear: both; }
 
+.parallax__btn:link span, .parallax__btn:visited span, .parallax__text, .top-bar__links a:link, .top-bar__links a:visited {
+  color: #40B8D6;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: .2em;
+  font-weight: 600;
+  text-decoration: none;
+  -webkit-transition: color .2s;
+  transition: color .2s; }
+
 *,
 *::after,
 *::before {
@@ -46,9 +56,6 @@
   .text-gray:not(:last-child) {
     margin-bottom: 15px; }
 
-.text-blue {
-  color: #40B8D6; }
-
 .icon {
   font-size: 16px;
   width: 15px;
@@ -83,16 +90,52 @@ body {
   margin: 0 auto; }
 
 .parallax {
+  position: relative;
   height: 220px;
   width: 100%; }
+  .parallax__box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  .parallax__btn:link, .parallax__btn:visited {
+    border: solid 4px #40B8D6;
+    display: block;
+    padding: 8px 0;
+    -webkit-transition: -webkit-box-shadow .4s;
+    transition: -webkit-box-shadow .4s;
+    transition: box-shadow .4s;
+    transition: box-shadow .4s, -webkit-box-shadow .4s;
+    font-size: 0; }
+    .parallax__btn:link span, .parallax__btn:visited span {
+      display: inline-block;
+      padding: 0 25px;
+      line-height: 45px;
+      font-size: 16px;
+      -webkit-transition: color .2s;
+      transition: color .2s; }
+      .parallax__btn:link span i, .parallax__btn:visited span i {
+        font-size: 22px;
+        -webkit-transform: translate(2px, 2px);
+                transform: translate(2px, 2px); }
+    .parallax__btn:link span:first-child, .parallax__btn:visited span:first-child {
+      border-right: solid 4px #40B8D6; }
+    .parallax__btn:link:hover, .parallax__btn:link:active, .parallax__btn:visited:hover, .parallax__btn:visited:active {
+      -webkit-box-shadow: inset 0 0 100px 4px rgba(64, 184, 214, 0.4);
+              box-shadow: inset 0 0 100px 4px rgba(64, 184, 214, 0.4); }
+  .parallax__text {
+    margin-top: 6px;
+    font-size: 10px;
+    font-weight: 300; }
   .parallax--cv {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5))), url("../img/parallax-bg3.jpg");
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.5)), url("../img/parallax-bg3.jpg");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7))), url("../img/parallax-bg3.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7) rgba(0, 0, 0, 0.7)), url("../img/parallax-bg3.jpg");
     background-attachment: fixed;
     background-size: cover; }
   .parallax--git {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5))), url("../img/parallax-bg1.jpg");
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.5)), url("../img/parallax-bg1.jpg");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7))), url("../img/parallax-bg1.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7) rgba(0, 0, 0, 0.7)), url("../img/parallax-bg1.jpg");
     background-attachment: fixed;
     background-size: cover; }
 
@@ -114,13 +157,8 @@ body {
     .top-bar__links a:link, .top-bar__links a:visited {
       display: inline-block;
       margin: 0 12px;
-      color: #40B8D6;
-      font-weight: 600;
       line-height: 36px;
       font-size: 13px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      text-decoration: none;
       -webkit-transition: color .2s;
       transition: color .2s; }
       .top-bar__links a:link:hover, .top-bar__links a:link:active, .top-bar__links a:visited:hover, .top-bar__links a:visited:active {
