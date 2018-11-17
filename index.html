@@ -64,34 +64,34 @@
         </div>
     </header>
     <section id="about" class="section">
-        <div class="container">
+        <div class="container about">
             <h2 class="title">Who i am</h2>
             <div class="grid-60-40">
                 <div>
-                    <p class="text-gray">
+                    <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor in cididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
                     </p>
-                    <p class="text-gray">
+                    <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor in cididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
                     </p>
                 </div>
                 <div>
-                    <p class="text-gray">
+                    <p>
                         <i class="fas fa-birthday-cake icon"></i>
                         <span>Birthday:</span>
                         18/09/1994
                     </p>
-                    <p class="text-gray">
+                    <p>
                         <i class="fas fa-mobile-alt icon"></i>
                         <span>Phone:</span>
                         +54 9 11 2250 5012
                     </p>
-                    <p class="text-gray">
+                    <p>
                         <i class="fas fa-envelope icon"></i>
                         <span>E-mail:</span>
                         contact@abbateangelica.com
                     </p>
-                    <p class="text-gray">
+                    <p>
                         <i class="fas fa-map-marked-alt icon"></i>
                         <span>Address:</span>
                         Santos Dumont 2400, Palermo, CABA, Argentina.
@@ -145,11 +145,35 @@
         </div>
     </section>
 
-    <section id="contact" class="section">
-        <h2 class="title">Contact</h2>
-        <form action="">
-
-        </form>
+    <section id="contact" class="section contact">
+        <div class="container-sm">
+            <h2 class="title">Contact</h2>
+            <p class="contact__subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor in cididunt ut labore et dolore magna aliqua. Ut enim ad veniam, quis nostrud exercitation laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="container-form">
+            <form action="" class="form">
+                <div class="form__group">
+                    <label class="form__label" for="name">Name</label>
+                    <input class="form__input" type="text" name="name" id="name">
+                </div>
+                <div class="form__group">
+                    <label class="form__label" for="email">E-mail</label>
+                    <input class="form__input" type="text" name="email" id="email">                    
+                </div>
+                <div class="form__group">
+                    <label class="form__label" for="subject">Subject</label>
+                    <input class="form__input" type="text" name="subject" id="subject">
+                </div>
+                <div class="form__group">
+                    <label class="form__label" for="message">Message</label>
+                    <textarea class="form__input form__input--textarea" name="message" id="message"></textarea>
+                </div>
+                <button class="form__btn">
+                    Send
+                    <i class="fas fa-envelope"></i>
+                </button>
+            </form>
+        </div>
     </section>
 
     <footer class="footer">
