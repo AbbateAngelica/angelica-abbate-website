@@ -40,29 +40,45 @@
                 <span>Web Developer</span>
             </h1>
             <div class="cover__avatar-slot">
-                <a href="#">
+                <a href="#about">
                     <div class="avatar"></div>
                 </a>
             </div>
-
-        </div>
-        <div class="menu">
-            <ul class="menu__list">
-                <li>
-                    <a href="#">Who i am</a>
-                </li>
-                <li>
-                    <a href="#">Resume</a>
-                </li>
-                <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
         </div>
     </header>
+    <div class="menu">
+        <button class="menu__mobile-btn" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        <ul class="menu__list">
+            <li>
+                <a href="#about">Who I Am</a>
+            </li>
+            <li>
+                <a href="#resume">Resume</a>
+            </li>
+            <li>
+                <a href="#portfolio">Portfolio</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <div class="menu-mobile" id="menu-mobile">
+        <ul class="menu-mobile__list">
+            <li>
+                <a href="#about">Who I Am</a>
+            </li>
+            <li>
+                <a href="#resume">Resume</a>
+            </li>
+            <li>
+                <a href="#portfolio">Portfolio</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </div>
     <section id="about" class="section">
         <div class="container about">
             <h2 class="title">Who i am</h2>
@@ -101,7 +117,7 @@
         </div>
     </section>
 
-    <section class="section section--gray">
+    <section class="section section--gray" id="resume">
         <div class="container">
             <h2 class="title">Resume</h2>
             <div class="grid-3">
@@ -142,7 +158,7 @@
                         <div class="swiper-slide">
                             <div class="grid">
                                 <div class="grid__item-40">
-                                    <h3 class="title title--sm">Creative agency<br> template recreation</h3>
+                                    <h3 class="title title--sm title--portfolio">Creative Agency<br>Template Recreation</h3>
                                     <p class="portfolio__text">
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor in cididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
                                     </p>
@@ -151,55 +167,39 @@
                                     <a href="#" class="portfolio__btn">View Project</a>
                                 </div>
                                 <div class="grid__item-60">
-                                    <img class="portfolio__img" src="img/laptop.png" alt="Portfolio">
+                                    <img class="portfolio__img" src="img/portfolio-agency.png" alt="Portfolio">
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="grid">
                                 <div class="grid__item-40">
-                                    <h3 class="title title--sm">LALALALALA <br> template recreation</h3>
+                                    <h3 class="title title--sm title--portfolio">Blog Website<br>Template Recreation</h3>
                                     <p class="portfolio__text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor in cididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+                                        Lorem ipsum dolor sit amet, con eiusmod tempor in cididunt ut labore et dolore magna aliqua. Ut enim ad veniam, quis nostrud exercitation ullamco laboris nia commodo consequat. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
                                     </p>
                                     <a href="#" class="portfolio__link"><i class="fab fa-github"></i> See it on GitHub</a>
                                     <br>
                                     <a href="#" class="portfolio__btn">View Project</a>
                                 </div>
                                 <div class="grid__item-60">
-                                    <img class="portfolio__img" src="img/laptop.png" alt="Portfolio">
+                                    <img class="portfolio__img" src="img/portfolio-blog.png" alt="Portfolio">
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="grid">
                                 <div class="grid__item-40">
-                                    <h3 class="title title--sm">Cha Cha y Cha<br> template recreation</h3>
+                                    <h3 class="title title--sm title--portfolio">Sakura Fan Page<br>Website For Fun</h3>
                                     <p class="portfolio__text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor in cididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+                                        Sed do eiusmod tempor in cididunt ut labore et dolore magna aliqua. Exercitation ullamco laboris nisi ut aliquip ex ea commos iste natus error sit voluptatem accusantium doloremque laudantium.
                                     </p>
                                     <a href="#" class="portfolio__link"><i class="fab fa-github"></i> See it on GitHub</a>
                                     <br>
                                     <a href="#" class="portfolio__btn">View Project</a>
                                 </div>
                                 <div class="grid__item-60">
-                                    <img class="portfolio__img" src="img/laptop.png" alt="Portfolio">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="grid">
-                                <div class="grid__item-40">
-                                    <h3 class="title title--sm">Creative agency <br> template recreation</h3>
-                                    <p class="portfolio__text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor in cididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-                                    </p>
-                                    <a href="#" class="portfolio__link"><i class="fab fa-github"></i> See it on GitHub</a>
-                                    <br>
-                                    <a href="#" class="portfolio__btn">View Project</a>
-                                </div>
-                                <div class="grid__item-60">
-                                    <img class="portfolio__img" src="img/laptop.png" alt="Portfolio">
+                                    <img class="portfolio__img" src="img/portfolio-sakura.png" alt="Portfolio">
                                 </div>
                             </div>
                         </div>
@@ -261,10 +261,7 @@
         </div>
     </section>
 
-    <footer class="footer">
-        <p>Design & Development by Angelica Abbate</p>
-    </footer>
-
+    <footer class="footer">Development and Design by Angelica Abbate</footer>
 
     <script src="js/vendor/swiper.min.js"></script>
     <script src="js/main.js"></script>

@@ -138,8 +138,13 @@ $border-main-light: solid 2px $color-main;
     padding: 40px 60px;
 }
 
+.swiper-wrapper {
+    overflow: hidden;
+}
+
 .swiper-slide {
     background-color: $color-light;
+    padding: 1px;
 }
 
 
@@ -154,7 +159,7 @@ $border-main-light: solid 2px $color-main;
 }
 
 .swiper-pagination-white {
-    transform: translateY(10px);
+    bottom: 0 !important;
 }
 
 .swiper-button-white {
@@ -170,6 +175,13 @@ $border-main-light: solid 2px $color-main;
 }
 
 // ---------- GENERAL
+
+// --- Selection bg and font color changed
+::selection {
+    background-color: $color-main;
+    color: $color-light;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     color: $color-dark;
@@ -250,17 +262,20 @@ button {
 
     &__text {
         @extend %text-blue;
-        margin-top: 6px;
         font-size: 10px;
         font-weight: 300;
+
+        position: absolute;
+        bottom: -20px;
+        width: 100%;
     }
 
     &--cv {
-        @include parallax("../img/parallax-bg3.jpg");
+        @include parallax("../img/parallax-bg3.jpeg");
     }
 
     &--git {
-        @include parallax("../img/parallax-bg1.jpg");
+        @include parallax("../img/parallax-bg1.jpeg");
     }
 }
 
@@ -277,7 +292,7 @@ button {
     width: 100%;
     background-color: $color-dark;
     border-bottom: $border-main;
-    z-index: 100;
+    z-index: 150;
 
     &__languages {
         float: left;
@@ -306,7 +321,7 @@ button {
 
 .cover {
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/cover-bg.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/cover-bg.jpeg);
     background-size: cover;
     background-position: center;
     height: 280px;
@@ -322,6 +337,7 @@ button {
         font-size: 50px;
         font-weight: 400;
         letter-spacing: .09em;
+        width: 90%;
 
         & span {
             display: block;
@@ -341,6 +357,7 @@ button {
         left: 50%;
         transform: translateX(-50%);
         bottom: -75px;
+        z-index: 120;
     }
 }
 
@@ -379,8 +396,15 @@ button {
 }
 
 .menu {
+    position: relative;
     height: 60px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+    background-color: #FFF;
+
+    // position: -webkit-sticky; /* Safari */
+    // position: sticky;
+    // top: 40px;
+    // z-index: 30;
 
     &__list {
         text-decoration: none;
@@ -416,6 +440,62 @@ button {
             &:nth-child(3),
             &:nth-child(4) {
                 transform: translateX(125px);
+            }
+        }
+    }
+
+    &__mobile-btn {
+        display: none;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: $color-main;
+        cursor: pointer;
+
+    }
+}
+
+.menu-mobile {
+    box-shadow: 0 -2px 8px rgba(0,0,0,.2) inset;
+    background-color: #f9f9f9;
+    height: 0;
+    overflow: hidden;
+    transition: height .4s;
+
+    &.active {
+        height: 204px;
+    }
+
+    &__list {
+        list-style: none;
+
+        & li {
+            display: block;
+            width: 100%;
+
+            & a:link,
+            & a:visited {
+                display: block;
+                width: 100%;
+                font-size: 15px;
+                letter-spacing: .2em;
+                color: $color-dark;
+                line-height: 50px;
+                text-transform: uppercase;
+                text-decoration: none;
+                transition: color .3s, background-color .3s;
+                text-align: center;
+                transition: color .3s, background-color .3s;
+                border-bottom: solid 1px #EEE;
+            }
+            & a:hover,
+            & a:active {
+                color: $color-light;
+                background-color: $color-main;
             }
         }
     }
@@ -546,5 +626,157 @@ button {
 
 .footer {
     background-color: $color-dark;
-    height: 220px;
+    color: $color-main;
+    line-height: 40px;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+}
+
+
+// --- MEDIA QUERIES
+
+@media(max-width: 980px) {
+
+    .section {
+        padding: 40px;
+    }
+
+    .grid {
+        
+        & > div {
+            width: 100%;
+    
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .title {
+        margin-bottom: 20px;
+
+        &--portfolio {
+            text-align: center;
+
+            &::after {
+                margin: 10px auto;
+            }
+        }
+    }
+
+    .portfolio {
+        text-align: center;
+
+        &__img {
+            display: block;
+            max-width: 420px;
+            margin: 20px auto 0 auto;
+        }
+    }
+
+    .contact {
+        &__subtitle {
+            margin-top: 0;
+        }
+    }
+
+    .swiper-container {
+        max-width: 520px;
+        margin: 0 auto;
+        padding: 15px 20px 30px 20px;
+    }
+}
+
+@media(max-width: 920px) {
+    .cover {
+        &__avatar-slot {
+            left: 20px;
+            transform: none;
+        }
+    }
+
+    .menu {
+        position: relative;
+        height: 50px;
+
+        &__list {
+            position: absolute;
+            display: none;
+        }
+
+        &__mobile-btn {
+            display: block;
+        }
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+}
+
+@media(max-width: 880px) {
+    .section {
+        padding: 40px 20px;
+    }
+
+    .title {
+        font-size: 24px;
+        &--sm {
+            font-size: 16px;
+        }
+    }
+
+    .cover {
+        height: 220px;
+        &__title {
+            &:first-child {
+                font-size: 42px;
+            }
+            
+            &:last-child {
+                font-size: 12px;
+            }
+        }
+    }
+    
+    .avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .parallax {
+        height: 180px;
+
+        &__btn:link,
+        &__btn:visited {
+            padding: 8px 0;
+    
+            & span {
+                padding: 0 15px;
+                line-height: 25px;
+                font-size: 14px;
+
+                & i {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 650px) {
+    .form {
+        &__group {
+            &:first-child {
+                margin-right: 0;
+            }
+    
+            &:nth-child(1),
+            &:nth-child(2) {
+                width: 100%;
+            }
+        }
+    }
 }
