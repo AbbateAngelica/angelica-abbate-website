@@ -52,6 +52,7 @@ $border-main-light: solid 2px $color-main;
     transition: color .2s;
 }
 
+
 // ---------- RESET
 *,
 *::after,
@@ -104,19 +105,22 @@ $border-main-light: solid 2px $color-main;
 
 // ---------- GRIDS
 
-.grid-60-40 {
+.grid {
     @extend %clearfix;
     & > div {
         float: left;
 
-        &:first-child {
-            width: 60%;
+        &:not(:last-child) {
             margin-right: 40px;
         }
-        
-        &:last-child {
-            width: calc(40% - 40px);
-        }
+    }
+
+    &__item-60 {
+        width: 60%;
+    }
+    
+    &__item-40 {
+        width: calc(40% - 40px);
     }
 }
 
@@ -126,6 +130,43 @@ $border-main-light: solid 2px $color-main;
         float: left;
         width: calc(100% / 3);
     }
+}
+
+// ---------- SWIPER 
+
+.swiper-container {
+    padding: 40px 60px;
+}
+
+.swiper-slide {
+    background-color: $color-light;
+}
+
+
+.swiper-pagination-bullet {
+    transition: .2s !important;
+    width: 10px !important;
+    height: 10px !important;
+}
+
+.swiper-pagination-white .swiper-pagination-bullet-active {
+    background-color: $color-main;
+}
+
+.swiper-pagination-white {
+    transform: translateY(10px);
+}
+
+.swiper-button-white {
+    color: $color-main;
+    font-size: 22px;
+}
+.swiper-button-next {
+    right: 0px;
+}
+
+.swiper-button-prev {
+    left: 0px;
 }
 
 // ---------- GENERAL
@@ -386,8 +427,48 @@ button {
     }
 }
 
+.portfolio {
+
+    &__text {
+        @extend %text-gray;
+    }
+
+    &__link:link,
+    &__link:visited {
+        display: inline-block;
+        color: $color-main;
+        font-weight: 600;
+        text-decoration: none;
+        padding-bottom: 2px;
+        border-bottom: solid 1px $color-main;
+
+        & i {
+            font-size: 16px;
+            margin-right: 3px;
+        }
+    }
+
+    &__btn:link,
+    &__btn:visited {
+        @extend %text-blue;
+        display: inline-block;
+        border: $border-main-light;
+        margin: 40px 0 0 0;
+        padding: 8px 12px;
+        transition: box-shadow .3s;
+
+        &:hover,
+        &:active {
+            box-shadow: inset 0 0 3px 2px rgba(64, 184, 214, 0.4);
+        }
+    }
+
+    &__img {
+        width: 100%;
+    }
 
 
+}
 
 .contact {
     &__subtitle {
@@ -448,10 +529,11 @@ button {
         display: block;
         border: $border-main-light;
         background-color: $color-gray-bg;
-        width: 100px;
-        padding: 8px 5px;
+        width: 120px;
+        padding: 8px;
         margin: 0 auto;
         font-family: 'Open Sans', sans-serif;
+        font-size: 15px;
         cursor: pointer;
         transition: box-shadow .3s;
 
