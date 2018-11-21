@@ -1,7 +1,7 @@
 // ---------- VARIABLES
 $color-dark: #222;
 $color-light: #fff;
-$color-main: #40B8D6;
+$color-main: #40b8d6;
 $color-gray-bg: #f9f9f9;
 $color-gray: #777;
 
@@ -14,19 +14,22 @@ $border-main-light: solid 2px $color-main;
 // ---------- MIXINS & PLACEHOLDERS
 
 @mixin parallax($img) {
-    background-image: linear-gradient(rgba(0, 0, 0, .7) rgba(0, 0, 0, .7)), url($img);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7) rgba(0, 0, 0, 0.7)),
+        url($img);
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
 }
 
 %clearfix {
     &::after {
         display: block;
-        content: "";
+        content: '';
         clear: both;
     }
 }
 
+.text-gray,
 %text-gray {
     color: $color-gray;
     line-height: 1.6;
@@ -46,12 +49,11 @@ $border-main-light: solid 2px $color-main;
     color: $color-main;
     text-transform: uppercase;
     text-align: center;
-    letter-spacing: .2em;
+    letter-spacing: 0.2em;
     font-weight: 600;
     text-decoration: none;
-    transition: color .2s;
+    transition: color 0.2s;
 }
-
 
 // ---------- RESET
 *,
@@ -60,6 +62,8 @@ $border-main-light: solid 2px $color-main;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 // ---------- HEADINGS & PARAGRAPH
@@ -69,12 +73,12 @@ $border-main-light: solid 2px $color-main;
     font-weight: 300;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: .2em;
+    letter-spacing: 0.2em;
     margin-bottom: 60px;
 
     &::after {
         display: block;
-        content: "";
+        content: '';
         margin: 20px auto;
         height: 4px;
         width: 120px;
@@ -103,6 +107,15 @@ $border-main-light: solid 2px $color-main;
     margin-right: 10px;
 }
 
+.generic-link:link,
+.generic-link:visited {
+    color: $color-main;
+}
+.generic-link:hover,
+.generic-link:active {
+    color: $color-main-hover;
+}
+
 // ---------- GRIDS
 
 .grid {
@@ -111,14 +124,24 @@ $border-main-light: solid 2px $color-main;
         float: left;
 
         &:not(:last-child) {
+            margin-left: 0;
             margin-right: 40px;
+        }
+    }
+
+    &__item--right {
+        float: right !important;
+
+        &:not(:last-child) {
+            margin-left: 40px !important;
+            margin-right: 0 !important;
         }
     }
 
     &__item-60 {
         width: 60%;
     }
-    
+
     &__item-40 {
         width: calc(40% - 40px);
     }
@@ -132,7 +155,7 @@ $border-main-light: solid 2px $color-main;
     }
 }
 
-// ---------- SWIPER 
+// ---------- SWIPER
 
 .swiper-container {
     padding: 40px 60px;
@@ -147,9 +170,8 @@ $border-main-light: solid 2px $color-main;
     padding: 1px;
 }
 
-
 .swiper-pagination-bullet {
-    transition: .2s !important;
+    transition: 0.2s !important;
     width: 10px !important;
     height: 10px !important;
 }
@@ -188,16 +210,9 @@ body {
     font-size: 14px;
 }
 
-input,
-select,
-textarea,
-button {
-    outline: none;
-}
-
 .section {
     padding: 80px 40px;
-    
+
     &--gray {
         background-color: $color-gray-bg;
     }
@@ -226,7 +241,8 @@ button {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
     }
 
     &__btn:link,
@@ -234,7 +250,7 @@ button {
         border: $border-main-light;
         display: block;
         padding: 8px 0;
-        transition: box-shadow .4s;
+        transition: box-shadow 0.4s;
         font-size: 0;
 
         & span {
@@ -243,7 +259,7 @@ button {
             padding: 0 25px;
             line-height: 45px;
             font-size: 16px;
-            transition: color .2s;
+            transition: color 0.2s;
             & i {
                 font-size: 22px;
                 transform: translate(2px, 2px);
@@ -271,11 +287,11 @@ button {
     }
 
     &--cv {
-        @include parallax("../img/parallax-bg3.jpeg");
+        @include parallax('../img/parallax-bg3.jpeg');
     }
 
     &--git {
-        @include parallax("../img/parallax-bg1.jpeg");
+        @include parallax('../img/parallax-bg1.jpeg');
     }
 }
 
@@ -306,7 +322,7 @@ button {
             margin: 0 12px;
             line-height: 36px;
             font-size: 13px;
-            transition: color .2s;            
+            transition: color 0.2s;
 
             &:hover,
             &:active {
@@ -321,7 +337,8 @@ button {
 
 .cover {
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(../img/cover-bg.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+        url(../img/cover-bg.jpeg);
     background-size: cover;
     background-position: center;
     height: 280px;
@@ -336,7 +353,7 @@ button {
         color: $color-light;
         font-size: 50px;
         font-weight: 400;
-        letter-spacing: .09em;
+        letter-spacing: 0.09em;
         width: 90%;
 
         & span {
@@ -347,9 +364,9 @@ button {
                 text-transform: uppercase;
                 font-size: 16px;
                 font-weight: 300;
-                letter-spacing: .3em;
+                letter-spacing: 0.3em;
             }
-        } 
+        }
     }
 
     &__avatar-slot {
@@ -364,28 +381,28 @@ button {
 .avatar {
     position: relative;
     border: $border-main;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background-image: url(../img/avatar.jpg);
-    background-size: cover;
+    background-image: url('../img/angelica-a.png');
+    background-size: 120%;
     background-position: center;
     overflow: hidden;
 
     &::after {
         display: block;
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
-        background-image: url(../img/avatar-hover.jpg);
-        background-size: cover;
+        background-image: url('../img/angelica-b.png');
+        background-size: 120%;
         background-position: center;
         opacity: 0;
-        transition: opacity .4s;
+        transition: opacity 0.4s;
     }
 
     &:hover {
@@ -398,8 +415,8 @@ button {
 .menu {
     position: relative;
     height: 60px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
-    background-color: #FFF;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
 
     // position: -webkit-sticky; /* Safari */
     // position: sticky;
@@ -414,7 +431,7 @@ button {
             display: inline-block;
             margin: 0 20px;
             font-size: 16px;
-            letter-spacing: .2em;
+            letter-spacing: 0.2em;
 
             & a:link,
             & a:visited {
@@ -424,7 +441,7 @@ button {
                 line-height: 60px;
                 text-transform: uppercase;
                 text-decoration: none;
-                transition: color .3s, background-color .3s;
+                transition: color 0.3s, background-color 0.3s;
             }
             & a:hover,
             & a:active {
@@ -455,16 +472,16 @@ button {
         border: none;
         color: $color-main;
         cursor: pointer;
-
     }
 }
 
 .menu-mobile {
-    box-shadow: 0 -2px 8px rgba(0,0,0,.2) inset;
+    display: none;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2) inset;
     background-color: #f9f9f9;
     height: 0;
     overflow: hidden;
-    transition: height .4s;
+    transition: height 0.4s;
 
     &.active {
         height: 204px;
@@ -482,15 +499,15 @@ button {
                 display: block;
                 width: 100%;
                 font-size: 15px;
-                letter-spacing: .2em;
+                letter-spacing: 0.2em;
                 color: $color-dark;
                 line-height: 50px;
                 text-transform: uppercase;
                 text-decoration: none;
-                transition: color .3s, background-color .3s;
+                transition: color 0.3s, background-color 0.3s;
                 text-align: center;
-                transition: color .3s, background-color .3s;
-                border-bottom: solid 1px #EEE;
+                transition: color 0.3s, background-color 0.3s;
+                border-bottom: solid 1px #eee;
             }
             & a:hover,
             & a:active {
@@ -508,7 +525,6 @@ button {
 }
 
 .portfolio {
-
     &__text {
         @extend %text-gray;
     }
@@ -535,7 +551,7 @@ button {
         border: $border-main-light;
         margin: 40px 0 0 0;
         padding: 8px 12px;
-        transition: box-shadow .3s;
+        transition: box-shadow 0.3s;
 
         &:hover,
         &:active {
@@ -546,8 +562,38 @@ button {
     &__img {
         width: 100%;
     }
+}
 
+.list {
+    list-style: none;
+    margin-bottom: 20px;
 
+    & li {
+        position: relative;
+        display: block;
+        padding-left: 17px;
+        line-height: 1.4;
+        margin-bottom: 5px;
+
+        &::before {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            border: $border-main-light;
+            border-radius: 100px;
+        }
+
+        &.no-bullet {
+            &::before {
+                display: none;
+            }
+        }
+    }
 }
 
 .contact {
@@ -582,7 +628,6 @@ button {
         margin-bottom: 8px;
         font-weight: 600;
         font-size: 16px;
-
     }
 
     &__input {
@@ -593,7 +638,7 @@ button {
         padding: 5px;
         resize: none;
         font-family: 'Open Sans', sans-serif;
-        transition: box-shadow .3s;
+        transition: box-shadow 0.3s;
 
         &:focus {
             box-shadow: inset 0 0 3px 2px rgba(64, 184, 214, 0.4);
@@ -615,7 +660,7 @@ button {
         font-family: 'Open Sans', sans-serif;
         font-size: 15px;
         cursor: pointer;
-        transition: box-shadow .3s;
+        transition: box-shadow 0.3s;
 
         &:hover,
         &:active {
@@ -633,23 +678,25 @@ button {
     text-align: center;
 }
 
-
 // --- MEDIA QUERIES
 
-@media(max-width: 980px) {
-
+@media (max-width: 980px) {
     .section {
         padding: 40px;
     }
 
     .grid {
-        
         & > div {
             width: 100%;
-    
+
             &:not(:last-child) {
-                margin-right: 0;
-                margin-bottom: 20px;
+                margin: 0 0 20px 0 !important;
+            }
+        }
+
+        &__item--right {
+            &:not(:last-child) {
+                margin: 0 0 20px 0 !important;
             }
         }
     }
@@ -689,7 +736,7 @@ button {
     }
 }
 
-@media(max-width: 920px) {
+@media (max-width: 920px) {
     .cover {
         &__avatar-slot {
             left: 20px;
@@ -714,9 +761,34 @@ button {
     .menu-mobile {
         display: block;
     }
+
+    .grid-3 {
+        & > div {
+            width: 100%;
+        }
+    }
+
+    .resume {
+    }
+
+    .list {
+        max-width: 290px;
+        margin: 0 auto;
+    }
+
+    .title {
+        &--sm {
+            text-align: center;
+            margin-top: 30px;
+
+            &::after {
+                margin: 10px auto;
+            }
+        }
+    }
 }
 
-@media(max-width: 880px) {
+@media (max-width: 880px) {
     .section {
         padding: 40px 20px;
     }
@@ -730,17 +802,18 @@ button {
 
     .cover {
         height: 220px;
+
         &__title {
-            &:first-child {
+            & span:first-child {
                 font-size: 42px;
             }
-            
-            &:last-child {
+
+            & span:last-child {
                 font-size: 12px;
             }
         }
     }
-    
+
     .avatar {
         width: 120px;
         height: 120px;
@@ -752,7 +825,7 @@ button {
         &__btn:link,
         &__btn:visited {
             padding: 8px 0;
-    
+
             & span {
                 padding: 0 15px;
                 line-height: 25px;
@@ -766,16 +839,44 @@ button {
     }
 }
 
-@media(max-width: 650px) {
+@media (max-width: 650px) {
+    .section {
+        padding: 40px 15px;
+    }
+
     .form {
         &__group {
             &:first-child {
                 margin-right: 0;
             }
-    
+
             &:nth-child(1),
             &:nth-child(2) {
                 width: 100%;
+            }
+        }
+
+        &__label {
+            font-size: 14px;
+        }
+
+        &__input {
+            font-size: 14px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .cover {
+        &__title {
+            & span:first-child {
+                font-size: 34px;
+                white-space: nowrap;
+            }
+
+            & span:last-child {
+                font-size: 14px;
+                white-space: nowrap;
             }
         }
     }
