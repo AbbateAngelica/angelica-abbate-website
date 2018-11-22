@@ -113,14 +113,14 @@ window.onload = function() {
                 message: message
             })
             .then(function(response) {
-                alert('Tu mensaje ha sido enviado. Estaré respondiendo a la brevedad posible. Gracias.');
+                alert('Tu mensaje ha sido enviado. Estaré respondiendo a la brevedad posible. Gracias. || Your message have been sent. I\'ll be answering as soon as I can. Thank you.');
                 document.getElementById('form').reset();
             }, function(error) {
                 alert('Ha ocurrido un error al enviar el mensaje. Por favor, intentalo nuevamente.');
                 console.log(error);
             })
             .catch(function(error) {
-                alert('1Ha ocurrido un error al enviar el mensaje. Por favor, intentalo nuevamente.');
+                alert('Ha ocurrido un error al enviar el mensaje. Por favor, intentalo nuevamente.');
                 console.log(error);
             });
         }
