@@ -1,12 +1,16 @@
 <?php
-$name = $_POST['name'];
-$email = $_POST['email'];
-$subject = $_POST['subject'];
-$message = $_POST['message'];
+$request_body = file_get_contents('php://input');
+$data = json_decode($request_body);
 
-$msg = "Nombre: $name\nEmail: $email\nAsunto: $subject\nMensaje: $message";
+echo "------";
+echo "REQUEST BODY";
+echo $request_body;
+echo "------";
 
-$msg = wordwrap($msg,70);
+$to = "angelicabbate@gmail.com";
+$subject = "Formulario Angelica: $data->subject";
+$txt = "Nombre: $data->name\n\nEmail: $data->email\n\nAsunto: $data->subject\n\nMensaje: $data->message";
+$headers = "From: formulario@abbateangelica.com";
 
-mail("angelicabbate@gmail.com","FORMULARIO: $subject",$msg);
+mail($to,$subject,$txt,$headers);
 ?>

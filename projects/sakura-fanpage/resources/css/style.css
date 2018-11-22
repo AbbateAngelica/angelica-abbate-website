@@ -1,0 +1,605 @@
+/* --------------------#DD5C92--#3498DB-----rgb(255, 195, 220)-------------- */
+/* ----------- basic setup --------------- */
+/* --------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: #fff;
+    color: #333;
+    font-family: 'Muli', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+
+.clearfix::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+/* --------------------------------------- */
+/* --------- reusable components --------- */
+/* --------------------------------------- */
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+section{
+    padding: 80px;
+}
+
+.box {
+    padding: 1%;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: #dd5c92;
+    border-bottom: 1px solid #dd5c92;
+    transition: border-bottom 0.2s, color 0.2s;
+}
+
+a:hover,
+a:active {
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
+
+/* --------------headings----------------- */
+
+h1,
+h2,
+h3 {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+h1 {
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    line-height: 50px;
+    color: #eee;
+    font-size: 300%;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h2:after {
+    display: block;
+    height: 3px;
+    background-color: #dd5c92;
+    content: " ";
+    width: 200px;
+    margin: 30px auto 0 auto;
+}
+
+h3 {
+    font-size: 110%;
+    margin-bottom: 20px;
+}
+
+.section-features .long-copy{
+    margin-bottom: 30px;
+}
+
+/* ------------paragraphs------------- */
+
+.long-copy{
+    line-height: 145%;
+    width: 60%;
+    margin-left: 20%;
+    margin-bottom: 10px;
+    text-align: justify;  
+}
+
+.box p{
+    font-size: 90%;
+    line-height: 145%;
+}
+
+.section-features{
+    text-align: justify;    
+}
+
+/* ---------------icons---------------- */
+
+.icon-big {
+    font-size: 350%;
+    display: block;
+    font-weight: 500;
+    margin: 0 auto 10px auto;
+    color: #dd5c92;
+}
+
+
+/* --------------------------------------- */
+/* --------------- header ---------------- */
+/* --------------------------------------- */
+
+.opening-section {
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(img/bc3.jpg);
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+/* --------------buttons----------------- */
+
+.btn:link,
+.btn:visited,
+input[type=submit] {
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 200px;
+    text-decoration: none;
+    transition: background-color .3s, border .3s, color .2s
+}
+
+.btn:active,
+.btn:hover,
+input[type=submit]:hover,
+input[type=submit]:active {
+    background-color: #e686ae;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+    background-color: #dd5c92;
+    border: 2px solid #dd5c92;
+    color: #fff;
+    margin-right: 20px;
+}
+
+.btn-full:hover,
+.btn-full:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+    border: 2px solid #e686ae;
+    background-color: #e686ae;
+    
+    
+}
+
+.btn-ghost:link,
+.btn-ghost:visited{
+    border: 2px solid #dd5c92;
+    color: #dd5c92;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active{
+    border: 2px solid #e686ae;
+    color: #fff;
+}
+
+/* --------------menu and logo----------------- */
+
+.logo{
+    width: 200px;
+    height: auto;
+    float: left;
+    margin-top: 20px;
+}
+
+.main-nav{
+    list-style: none;
+    float: right;
+    margin-top: 30px;
+}
+
+.main-nav li{
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited{
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    padding: 8px;
+    color: #eee;
+    font-size: 90%;
+    text-transform: uppercase;
+    transition: border-bottom .3s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid #dd5c92;
+}
+
+/* --------------------------------------- */
+/* -------------- cuadrilla -------------- */
+/* --------------------------------------- */
+
+.section-img {
+    padding: 0;
+}
+
+.list-img {
+    list-style: none;
+    width: 100%;
+}
+
+.list-img li {
+    float: left;
+    width: 20%;
+    /* background-color: #000; */
+}
+
+.fig-img {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+
+    background-color: #000;
+}
+
+.fig-img img {
+    opacity: 0.7;
+    width: 100%;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: scale(1.10);
+}
+
+.fig-img img:hover {
+    transform: scale(1.03);
+    opacity: 1;
+}
+
+/* --------------------------------------- */
+/* -------------- app -------------- */
+/* --------------------------------------- */
+
+.section-steps {
+    background-color: #f5ebee;
+}
+
+.step-box:first-child{
+    margin-top: 30px;
+    text-align: right;
+}
+
+.step-box:last-child {
+    margin-top: 130px;
+    padding-left: 30px;
+    padding-right: 100px;
+}
+
+.app-img{
+    width: 80%;
+}
+
+.steps {
+    margin-bottom: 60px;
+}
+
+.steps:last-of-type {
+    margin-bottom: 120px;
+}
+
+.steps div {
+    font-size: 150%;
+    display: inline-block;
+    border: 3px solid #dd5c92;
+    color: #dd5c92;
+    font-weight: 500;
+    float: left;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    padding: 6px;
+    text-align: center;
+    margin-right: 25px;
+}
+
+
+.btn-app:link,
+.btn-app:visited {
+    text-decoration: none;
+    border-bottom: 0;
+}
+
+.btn-app img {
+    height: 55px;
+    width: auto;
+    margin-right: 10px;
+}
+
+/* --------------------------------------- */
+/* --------- usuarios destacados --------- */
+/* --------------------------------------- */
+
+.box img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+.icon-text {
+    margin-bottom: 6px;
+}
+
+.icon-text i {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    font-size: 120%;
+    line-height: 140%;
+    color: #dd5c92;
+    vertical-align: middle;
+    margin-top: -6px;
+    margin-right: 8px;
+}
+
+/* --------------------------------------- */
+/* -------- comentarios destacados ------- */
+/* --------------------------------------- */
+
+.section-comentarios {
+    text-align: justify;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(img/bc-opiniones3.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+blockquote {
+    padding: 1%;
+    line-height: 130%;
+    position: relative;
+    margin-top: 25px;
+    font-style: italic;
+}
+
+blockquote::before {
+    content: "\201C";
+    color: #e686ae;
+    font-size: 400%;
+    vertical-align: middle;
+}
+
+cite {
+    display: block;
+    margin-top: 25px;
+    font-size: 90%;
+}
+
+cite img {
+    height: 50px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+/* --------------------------------------- */
+/* ---------- productos / ventas --------- */
+/* --------------------------------------- */
+
+.section-productos {
+    background-color: #f7eff0;
+}
+
+.box-productos {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px #d4c5cb;
+    margin: 0 2.5%;
+    width: 95%;
+}
+
+.box-productos div {
+    padding: 15px;
+}
+
+.box-productos div:first-child {
+    background-color: #fcf8fa;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.box-productos div:last-child {
+    text-align: center;
+    background-color: #fcf8fa;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.box-productos div h3 {
+    font-size: 150%;
+    text-align: center;
+    font-weight: 200;
+}
+
+.box-productos div p {
+    font-size: 90%;
+    text-align: center;
+}
+
+.box-productos ul {
+    list-style: none;
+    line-height: 180%;
+}
+
+.productos-img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    width: 180px;
+    height: 180px;
+    box-shadow: 0 0 3px #e686ae;
+    border-radius: 4px;
+
+}
+
+.icon-small{
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    font-size: 100%;
+    line-height: 140%;
+    color: #dd5c92;
+    vertical-align: middle;
+    margin-top: -6px;
+    margin-right: 8px;
+}
+
+/* --------------------------------------- */
+/* -------------- formulario ------------- */
+/* --------------------------------------- */
+
+.zona-formulario {
+    width: 60%;
+    margin: 20px auto;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 3px;
+    background-color: #fcf8fa;
+    border: solid 1px #f9d8e8;
+}
+
+textarea {
+    resize: none;
+    min-height: 120px;
+}
+
+input[type=checkbox] {
+    margin: 10px 15px 10px 0;
+}
+
+*:focus {outline: none;}
+
+label {
+    font-weight: 400;
+}
+
+/* --------------------------------------- */
+/* ---------------- footer --------------- */
+/* --------------------------------------- */
+
+footer {
+    background-color: #333;
+    color: #d4c5cb;
+    padding: 50px;
+    font-size: 80%;
+}
+
+.mini-nav {
+    list-style: none;
+    float: left;
+}
+
+.mini-social {
+    list-style: none;
+    float: right;
+}
+
+.mini-nav li {
+    margin-right: 15px;
+}
+
+.mini-social li {
+    margin-right: 30px;    
+}
+
+.mini-nav li,
+.mini-social li {
+    display: inline-block;
+}
+
+.mini-nav li:last-child,
+.mini-social li:last-child {
+    margin-right: 0;
+}
+
+.mini-nav li a:link,
+.mini-nav li a:visited,
+.mini-social li a:link,
+.mini-social li a:visited {
+    text-decoration: none;
+    border: 0;
+    transition: color 0.2s;
+    color: #d4c5cb;    
+}
+
+.mini-nav li a:hover,
+.mini-nav li a:active{
+    color: #e686ae;
+}
+
+.mini-social li a:link,
+.mini-social li a:visited {
+    font-size: 160%;
+    color: #d4c5cb;
+    
+}
+
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-googleplus,
+.ion-social-instagram {
+    transition: color 0.2s;
+}
+
+.ion-social-facebook:hover,
+.ion-social-facebook:active {
+    color: #3b5998;
+}
+
+.ion-social-twitter:hover, 
+.ion-social-twitter:active {
+    color: #00aced;
+}
+
+.ion-social-googleplus:hover,
+.ion-social-googleplus:active {
+    color: #dd4b39;
+} 
+
+.ion-social-instagram:hover,
+.ion-social-instagram:active {
+    color: #517fa4;
+}
+
+
+footer p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer p:last-child {
+    margin-top: 5px;
+}
+

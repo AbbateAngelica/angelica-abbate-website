@@ -1,0 +1,173 @@
+
+/* big tablets / 1200px */
+@media only screen and (max-width: 1200px) {
+
+    .opening-section {
+        width: 100%;
+        padding: 0 2%;
+        font-size: 89%;
+    }
+
+    .row {
+        padding: 0 2%;
+    }
+
+    h3 {
+        text-align: left
+    }
+    
+    .productos-img {
+        width: 90%;
+    }
+
+    .box-productos div h3 {
+        font-size: 110%
+    }
+
+    .box-productos div p {
+        font-size: 80%
+    }
+
+    .box-productos div ul li {
+        font-size: 90%;
+    }
+
+    .icon-small {
+
+        width: 25px;
+        margin-right: 6px;
+        line-height: 120%;
+    }
+
+    h2 {
+        font-size: 155%;
+    }
+
+    .icon-text {
+        font-size: 85%;
+    }
+
+    .icon-text i {
+        margin-right: 0;
+    }
+
+    .section-steps div:last-child {
+        padding: 30px 30px 0 0;
+    }
+}
+
+/* small tablets / big tablets */
+@media only screen and (max-width: 1023px) {
+    body{
+        font-size: 17px;
+    }
+    section {
+        padding: 50px 0;
+    }
+    footer {
+        padding: 20px;
+    }
+    .mini-nav li {
+        margin-right: 10px;
+    }
+    .long-copy {
+        width: 80%;
+        margin-left: 10%;
+    }
+    .box-productos {
+        width: 100%; margin-left: 0;
+    }
+    .step-box:last-child {
+        margin-top: 40px;
+    }
+    .section-steps div:last-child {
+        padding: 30px 20px 0 0;
+    }
+    .logo {
+        width: 180px;
+    }
+    .main-nav li {
+        margin: 0;
+    }
+    .main-nav {
+        font-size: 120%;
+    }
+    .btn-app img {
+        height: 50px;
+    }
+    .box-productos div:last-of-type {
+        padding: 10px auto;
+    }
+}
+
+
+
+/* small phones / small tablets */
+@media only screen and (max-width: 767px) {
+    .body {
+        font-size: 15px;
+    }
+    .mini-nav {
+        display: none;
+    }
+    .mini-social {
+        width: 80%; margin: 0 10%;
+    }
+    .col {
+        width: 100%;
+        margin: 0 0 4% 0;
+    }
+    .main-nav {
+        display: none;
+    }
+    .btn-app img {
+         height: 40px;
+        }
+    .section-steps div:last-child {
+         padding:10px;
+        }
+    .step-box:first-child {
+        margin-top: 10px;
+    }
+    .steps {
+        margin-bottom: 40px;
+    }
+    .steps:last-of-type {
+        margin-bottom: 60px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+        line-height: 1.4;
+    }
+
+    h2 {
+        font-size: 120%;
+    }
+    h2::after {
+        margin-top: 20px;
+    }
+
+    .zona-formulario {
+        width: 80%;
+    }
+}
+
+
+
+/* small phones */
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.4em;
+        line-height: 1.4;
+    }
+
+    h2 {
+        font-size: 110%;
+    }
+    h2::after {
+        margin-top: 16px;
+    }
+}
+
+
